@@ -1,0 +1,686 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!-- ══ HERO ════════════════════════════════════════════ -->
+<section class="ls-hero ls-hero-slider-wrap">
+  <div id="premiumHeroSlider" class="carousel slide carousel-fade ls-hero-slider" data-bs-ride="carousel" data-bs-interval="5200" data-bs-pause="false">
+    <div class="carousel-indicators ls-hero-indicators">
+      <button type="button" data-bs-target="#premiumHeroSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Leadership Excellence"></button>
+      <button type="button" data-bs-target="#premiumHeroSlider" data-bs-slide-to="1" aria-label="Institutional Safety"></button>
+      <button type="button" data-bs-target="#premiumHeroSlider" data-bs-slide-to="2" aria-label="Personal Wellbeing"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <article class="carousel-item active">
+        <div class="ls-hero-slide-bg">
+          <img src="{{ url_for('static', filename='images/banner1.png') }}" alt="Leadership team in a strategy session">
+        </div>
+        <div class="ls-hero-layer"></div>
+        <div class="ls-particles"></div>
+        <div class="container ls-hero-content">
+          <div class="row align-items-center min-vh-100 py-5 g-5">
+            <div class="col-12 col-xl-8 col-lg-12">
+              <span class="eyebrow" data-anim="fade-down">Training</span>
+              <h1 data-anim="fade-up" data-delay="100">Empowering Potential.</h1>
+              <!-- <p class="ls-hero-sub mt-3 mb-4" data-anim="fade-up" data-delay="200">Lightseed partners with founders, leadership teams, and institutions to align behaviour with business outcomes through deep human development.</p> -->
+              <div class="d-flex flex-wrap gap-3" data-anim="fade-up" data-delay="300">
+                <a href="/contact" class="btn-ls-primary">Book a Strategy Call</a>
+                <a href="/services" class="btn-ls-outline">Explore Programs</a>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </article>
+
+      <article class="carousel-item">
+        <div class="ls-hero-slide-bg">
+          <img src="{{ url_for('static', filename='images/banner2.png') }}" alt="Professionals in a compliance training workshop">
+        </div>
+        <div class="ls-hero-layer"></div>
+        <div class="ls-particles"></div>
+        <div class="container ls-hero-content">
+          <div class="row align-items-center min-vh-100 py-5 g-5">
+            <div class="col-12 col-xl-8 col-lg-12">
+              <span class="eyebrow" data-anim="fade-down">Healing</span>
+              <h1 data-anim="fade-up" data-delay="100">Nurturing Wholeness.</h1>
+              <!-- <p class="ls-hero-sub mt-3 mb-4" data-anim="fade-up" data-delay="200">Our Lightseed Shuddhi framework helps organisations move beyond checkbox training to practical culture shifts that protect people and performance.</p> -->
+              <div class="d-flex flex-wrap gap-3" data-anim="fade-up" data-delay="300">
+                <a href="/shuddhi" class="btn-ls-primary">View Shuddhi</a>
+                <a href="/contact" class="btn-ls-outline">Request a Consultation</a>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </article>
+
+      <article class="carousel-item">
+        <div class="ls-hero-slide-bg">
+          <img src="{{ url_for('static', filename='images/banner3.png') }}" alt="Mindfulness and wellbeing session">
+        </div>
+        <div class="ls-hero-layer"></div>
+        <div class="ls-particles"></div>
+        <div class="container ls-hero-content">
+          <div class="row align-items-center min-vh-100 py-5 g-5">
+            <div class="col-12 col-xl-8 col-lg-12">
+              <span class="eyebrow" data-anim="fade-down">Therapy</span>
+              <h1 data-anim="fade-up" data-delay="100">Transforming lives.</h1>
+              <!-- <p class="ls-hero-sub mt-3 mb-4" data-anim="fade-up" data-delay="200">From leadership labs to therapy and breathwork, we create integrated pathways for sustainable energy, focus, and transformation.</p> -->
+              <div class="d-flex flex-wrap gap-3" data-anim="fade-up" data-delay="300">
+                <a href="/healing" class="btn-ls-primary">Explore Wellbeing</a>
+                <a href="/therapy" class="btn-ls-outline">Therapy & Coaching</a>
+              </div>
+            </div>
+         
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#premiumHeroSlider" data-bs-slide="prev" aria-label="Previous slide">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#premiumHeroSlider" data-bs-slide="next" aria-label="Next slide">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+  
+</section>
+<!-- ─── TICKER ─────────────────────────────────────── -->
+
+<div class="ls-ticker">
+  <div class="ls-ticker-track">
+    <span class="ls-ticker-item">Leadership & Behavioural Excellence <span class="ls-ticker-dot">✦</span></span>
+    <span class="ls-ticker-item">Lightseed Shuddhi <span class="ls-ticker-dot">✦</span></span>
+    <span class="ls-ticker-item">POSH · POCSO · DEI <span class="ls-ticker-dot">✦</span></span>
+    <span class="ls-ticker-item">Healing & Inner Alignment <span class="ls-ticker-dot">✦</span></span>
+    <span class="ls-ticker-item">Therapy & Coaching <span class="ls-ticker-dot">✦</span></span>
+    <span class="ls-ticker-item">Nischint Employability Framework <span class="ls-ticker-dot">✦</span></span>
+    <span class="ls-ticker-item">Praankosh · Saarthi · Lead Smart <span class="ls-ticker-dot">✦</span></span>
+    <span class="ls-ticker-item">Rooted in Wisdom. Rising in Light. <span class="ls-ticker-dot">✦</span></span>
+    <!-- Duplicate for seamless loop -->
+    <span class="ls-ticker-item">Leadership & Behavioural Excellence <span class="ls-ticker-dot">✦</span></span>
+    <span class="ls-ticker-item">Lightseed Shuddhi <span class="ls-ticker-dot">✦</span></span>
+    <span class="ls-ticker-item">POSH · POCSO · DEI <span class="ls-ticker-dot">✦</span></span>
+    <span class="ls-ticker-item">Healing & Inner Alignment <span class="ls-ticker-dot">✦</span></span>
+    <span class="ls-ticker-item">Therapy & Coaching <span class="ls-ticker-dot">✦</span></span>
+    <span class="ls-ticker-item">Nischint Employability Framework <span class="ls-ticker-dot">✦</span></span>
+    <span class="ls-ticker-item">Praankosh · Saarthi · Lead Smart <span class="ls-ticker-dot">✦</span></span>
+    <span class="ls-ticker-item">Rooted in Wisdom. Rising in Light. <span class="ls-ticker-dot">✦</span></span>
+  </div>
+</div>
+
+<!-- Simple Truth Below Banner -->
+<section class="ls-truth-compact-section">
+  <div class="ls-truth-compact-image">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Lightseed calm transformation visual">
+  </div>
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-12 col-lg-6">
+        <div class="ls-truth-compact-copy" data-anim="fade-up">
+          <span class="section-eyebrow">A Simple Truth</span>
+<h2>Tools shift. Awareness sustains.</h2>
+          <p>At Lightseed, we work at the intersection of behaviour, consciousness, and capability.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-5 offset-lg-1">
+        <div class="ls-truth-compact-list" data-anim="fade-left" data-delay="150">
+          <span class="section-eyebrow">Our programs help develop</span>
+          <ul>
+            <li>Emotionally intelligent leadership</li>
+            <li>Resilient, high-trust teams</li>
+            <li>Responsible institutions through POSH, DEI & POCSO awareness</li>
+            <li>Self-aware, capable individuals</li>
+            <li>Industry-ready graduates through Nischint, our employability framework</li>
+          </ul>
+          <a href="/services" class="ls-truth-compact-cta">See All Programs <span>-&gt;</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Image-Focused Homepage Cards -->
+<section class="ls-home-card-section ls-home-card-section-green">
+  <div class="container">
+    <div class="ls-card-section-head" data-anim="fade-up">
+      <span class="section-eyebrow">What We Create</span>
+      <h2>Visual pathways for human development.</h2>
+    </div>
+
+    <div class="ls-home-card-grid" data-stagger="110">
+      <a href="/training" class="ls-home-image-card">
+        <div class="ls-home-card-media">
+          <img src="{{ url_for('static', filename='images/leadership-labs.png') }}" alt="Leadership development workshop" loading="lazy">
+        </div>
+        <div class="ls-home-card-body">
+          <h3>Leadership Labs</h3>
+          <p>Sharper presence, decisions, and team trust.</p>
+          <span>Explore</span>
+        </div>
+      </a>
+
+      <a href="/shuddhi" class="ls-home-image-card">
+        <div class="ls-home-card-media">
+          <img src="{{ url_for('static', filename='images/Safe-Institutions.jpg') }}" alt="Institutional safety and compliance meeting" loading="lazy">
+        </div>
+        <div class="ls-home-card-body">
+          <h3>Safe Institutions</h3>
+          <p>Compliance built with culture and care.</p>
+          <span>Explore</span>
+        </div>
+      </a>
+
+      <a href="/nischint" class="ls-home-image-card">
+        <div class="ls-home-card-media">
+          <img class="ls-home-card-img-education" src="{{ url_for('static', filename='images/learners.jpg') }}" alt="Nischint employability framework for university and college students" loading="lazy">
+        </div>
+        <div class="ls-home-card-body">
+          <span class="ls-law-badge" style="margin-bottom:0.6rem;">Flagship Program</span>
+          <h3>Nischint</h3>
+          <p>A four-year employability journey from campus confidence to career readiness.</p>
+          <span>Explore</span>
+        </div>
+      </a>
+
+      <a href="/healing" class="ls-home-image-card">
+        <div class="ls-home-card-media">
+          <img src="{{ url_for('static', filename='images/wellbing.jpeg') }}" alt="Wellbeing and mindfulness practice" loading="lazy">
+        </div>
+        <div class="ls-home-card-body">
+          <h3>Wellbeing Spaces</h3>
+          <p>Resilience, regulation, and inner alignment.</p>
+          <span>Explore</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="ls-home-card-section bg-ls-dark">
+  <div class="container">
+    <div class="ls-card-section-head text-center mx-auto" data-anim="fade-up">
+      <span class="section-eyebrow">Signature Programs</span>
+      <h2 class="text-cream">Signature programs that create lasting transformation and turn potential into measurable performance.</h2>
+    </div>
+
+    <div class="row g-4" data-stagger="100">
+      <div class="col-12 col-sm-6 col-lg-3 program-box">
+        <a href="/training" class="ls-overlay-image-card">
+          <img src="{{ url_for('static', filename='images/exellance.JPG') }}" alt="Behavioural excellence program" class="ls-overlay-logo-img">
+          <div class="ls-overlay-card-copy">
+            <h3>Behavioural Excellence</h3>
+            <p>Practical growth for leaders and teams.</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3 program-box">
+        <a href="/shuddhi" class="ls-overlay-image-card">
+          <img src="{{ url_for('static', filename='images/Compliance-Culture.jpeg') }}" alt="Compliance culture program" class="ls-overlay-logo-img">
+          <div class="ls-overlay-card-copy">
+            <h3>Compliance Culture</h3>
+            <p>POSH, POCSO, and DEI with depth.</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3 program-box">
+        <a href="/nischint" class="ls-overlay-image-card">
+          <img src="{{ url_for('static', filename='images/learners.jpg') }}" alt="Nischint employability framework program" class="ls-overlay-logo-img">
+          <div class="ls-overlay-card-copy">
+            <span class="ls-law-badge" style="margin-bottom:0.6rem;">Lightseed's Flagship Program</span>
+            <h3>Nischint</h3>
+            <p>Building job-ready graduates, nischint se.</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-12 col-sm-6 col-lg-3 program-box">
+        <a href="/therapy" class="ls-overlay-image-card">
+          <img src="{{ url_for('static', filename='images/Therapyandcoaching.jpeg') }}" alt="Therapy and coaching" class="ls-overlay-logo-img">
+          <div class="ls-overlay-card-copy">
+            <h3>Therapy Pathways</h3>
+            <p>Confidential support for personal growth.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ls-home-card-section bg-ls-cream">
+  <div class="container">
+    <div class="ls-card-section-head" data-anim="fade-up">
+      <span class="section-eyebrow">Impact</span>
+      <h2>Experience, reach, and outcomes.</h2>
+    </div>
+
+    <div class="ls-home-stat-grid" data-stagger="120">
+      <div class="ls-stat-image-card">
+        <span class="lsx-icon-badge">
+          <svg class="lsx-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <strong class="ls-stat-value" data-count="10" data-suffix="+">0</strong>
+        <span class="ls-stat-divider" aria-hidden="true"></span>
+        <span class="ls-stat-label">Years Experience</span>
+      </div>
+
+      <div class="ls-stat-image-card">
+        <span class="lsx-icon-badge">
+          <svg class="lsx-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="3.5" y="4.5" width="17" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M3.5 9.5h17" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M8 3v3M16 3v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M7.5 13h3M7.5 16.5h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <strong class="ls-stat-value" data-count="500" data-suffix="+">0</strong>
+        <span class="ls-stat-divider" aria-hidden="true"></span>
+        <span class="ls-stat-label">Programs Delivered</span>
+      </div>
+
+      <div class="ls-stat-image-card">
+        <span class="lsx-icon-badge">
+          <svg class="lsx-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 20.5V8l6-3.5V20.5M14 20.5V10l6 2.5v8" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <path d="M4 20.5h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M7 10h1.5M7 13h1.5M7 16h1.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <strong class="ls-stat-value" data-count="200" data-suffix="+">0</strong>
+        <span class="ls-stat-divider" aria-hidden="true"></span>
+        <span class="ls-stat-label">Organisations Served</span>
+      </div>
+
+      <div class="ls-stat-image-card">
+        <span class="lsx-icon-badge">
+          <svg class="lsx-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="8.5" cy="8" r="2.6" stroke="currentColor" stroke-width="1.6"/>
+            <circle cx="16" cy="9" r="2.1" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M3.5 19c.5-3.2 2.6-5 5-5s4.5 1.8 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M14 14.3c2 .2 3.6 1.9 4 4.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <strong class="ls-stat-value" data-count="15" data-suffix="K+">0</strong>
+        <span class="ls-stat-divider" aria-hidden="true"></span>
+        <span class="ls-stat-label">Lives Impacted</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ls-home-card-section bg-ls-cream-dark">
+  <div class="container">
+    <div class="ls-feature-card-row">
+      <div class="ls-feature-image-card team" data-anim="scale-in">
+        <img src="{{ url_for('static', filename='images/team/teams.png') }}" alt="Founder-led practice">
+      </div>
+      <div class="ls-feature-copy-card" data-anim="fade-left" data-delay="150">
+        <span class="section-eyebrow">Founder-Led Practice</span>
+        <h2>Depth, discipline, and lived human insight.</h2>
+        <p>Psychological depth meets practical transformation design.</p>
+        <a href="/about" class="btn-ls-green">Meet the Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Legacy text-heavy sections replaced by the visual homepage above.
+
+<section class="py-6" style="background:var(--ls-cream-dark);padding:5rem 0;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;right:0;width:28%;height:100%;overflow:hidden;opacity:0.07;pointer-events:none;">
+    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=70" alt="" style="width:100%;height:100%;object-fit:cover;">
+  </div>
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-12 col-lg-5">
+        <span class="section-eyebrow" data-anim="fade-down">A Simple Truth</span>
+        <p class="ls-big-quote" data-anim="blur-in" data-delay="150">
+          Tools create change.<br>But only <em>awareness</em> sustains it.
+        </p>
+        <p class="mt-3" style="color:var(--ls-text-muted);line-height:1.8;" data-anim="fade-up" data-delay="250">
+          At Lightseed, we work at the intersection of behaviour, consciousness, and capability. Because sustainable transformation begins from the inside out.
+        </p>
+      </div>
+      <div class="col-12 col-lg-6 offset-lg-1">
+        <span class="section-eyebrow" data-anim="fade-right">Our programs help develop</span>
+        <div data-stagger="110">
+          <div class="d-flex gap-3 mb-2">
+            <span class="ls-truth-dot mt-2"></span>
+            <p class="mb-0" style="color:var(--ls-text-muted);">Emotionally intelligent leadership</p>
+          </div>
+          <div class="d-flex gap-3 mb-2">
+            <span class="ls-truth-dot mt-2"></span>
+            <p class="mb-0" style="color:var(--ls-text-muted);">Resilient, high-trust teams</p>
+          </div>
+          <div class="d-flex gap-3 mb-2">
+            <span class="ls-truth-dot mt-2"></span>
+            <p class="mb-0" style="color:var(--ls-text-muted);">Responsible institutions through POSH, DEI & POCSO awareness</p>
+          </div>
+          <div class="d-flex gap-3 mb-2">
+            <span class="ls-truth-dot mt-2"></span>
+            <p class="mb-0" style="color:var(--ls-text-muted);">Self-aware, capable individuals</p>
+          </div>
+          <div class="d-flex gap-3 mb-2">
+            <span class="ls-truth-dot mt-2"></span>
+            <p class="mb-0" style="color:var(--ls-text-muted);">Industry-ready graduates and conscious educators</p>
+          </div>
+        </div>
+        <a href="/services" class="btn-ls-green mt-4 d-inline-block" data-anim="scale-in" data-delay="650">See All Programs →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHAT WE DO ═══════════════════════════════════════ -->
+<section class="py-5 bg-ls-dark" style="padding:5rem 0;">
+  <div class="container">
+    <div class="text-center mb-5" data-anim="fade-up">
+      <span class="section-eyebrow">Human Development for the Real World</span>
+      <h2 class="text-cream" style="font-size:clamp(1.8rem,3.5vw,2.8rem);">Lightseed partners with organisations<br>to develop capabilities that drive outcomes.</h2>
+    </div>
+    <div class="row g-px" style="gap:1.5px;background:rgba(255,255,255,0.05);border-radius:16px;overflow:hidden;" data-stagger="110">
+      <div class="col ls-service-card" onclick="location.href='/training'" style="cursor:pointer;">
+        <div class="mb-3" style="font-size:2rem;">🎯</div>
+        <h5>Leadership & Behavioural Excellence</h5>
+        <p>Programs strengthening leadership presence, emotional intelligence, communication and team effectiveness.</p>
+      </div>
+      <div class="col ls-service-card" onclick="location.href='/shuddhi'" style="cursor:pointer;">
+        <div class="mb-3" style="font-size:2rem;">⚖️</div>
+        <h5>Institutional Safety & Compliance</h5>
+        <p>POSH, POCSO and DEI awareness that builds safe, respectful and responsible environments.</p>
+      </div>
+      <div class="col ls-service-card" onclick="location.href='/nischint'" style="cursor:pointer;">
+        <div class="mb-3" style="font-size:2rem;">🎓</div>
+        <h5>Nischint Employability Framework</h5>
+        <p>Faculty Development Programs and Nischint's four-year student journey creating industry-ready professionals.</p>
+      </div>
+      <div class="col ls-service-card" onclick="location.href='/healing'" style="cursor:pointer;">
+        <div class="mb-3" style="font-size:2rem;">🌿</div>
+        <h5>Emotional Wellbeing & Alignment</h5>
+        <p>Evidence-informed practices supporting emotional regulation, resilience and sustainable energy.</p>
+      </div>
+      <div class="col ls-service-card" onclick="location.href='/therapy'" style="cursor:pointer;">
+        <div class="mb-3" style="font-size:2rem;">🕊️</div>
+        <h5>Therapy & Personal Growth</h5>
+        <p>Confidential therapeutic support for individuals navigating emotional patterns and life transitions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ THREE PILLARS ════════════════════════════════════ -->
+<section class="py-5 bg-ls-green" style="padding:5rem 0;">
+  <div class="container">
+    <div class="text-center mb-5" data-anim="blur-in">
+      <span class="section-eyebrow">Our Approach</span>
+      <h2 class="text-cream" style="font-size:clamp(1.8rem,3.5vw,2.8rem);">Most training focuses on skills.<br>Lightseed works at the level of <em style="color:var(--ls-gold-light);">behaviour and awareness.</em></h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="ls-pillar ls-pillar-training text-center" onclick="location.href='/training'" data-anim="flip-in" data-delay="100">
+          <div class="ls-pillar-num">01</div>
+          <h4>Training</h4>
+          <p>Building capability and professional excellence across leadership, compliance, and education.</p>
+          <a href="/training" class="btn-ls-teal mt-3 d-inline-block" style="font-size:0.75rem;padding:0.5rem 1.2rem;">Explore →</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="ls-pillar ls-pillar-healing text-center" onclick="location.href='/healing'" data-anim="flip-in" data-delay="250">
+          <div class="ls-pillar-num">02</div>
+          <h4>Healing</h4>
+          <p>Restoring emotional balance and inner stability through breathwork, awareness and guided practices.</p>
+          <a href="/healing" class="btn-ls-teal mt-3 d-inline-block" style="font-size:0.75rem;padding:0.5rem 1.2rem;">Explore →</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="ls-pillar ls-pillar-therapy text-center" onclick="location.href='/therapy'" data-anim="flip-in" data-delay="400">
+          <div class="ls-pillar-num">03</div>
+          <h4>Therapy</h4>
+          <p>Addressing deeper behavioural patterns at their source through confidential, structured support.</p>
+          <a href="/therapy" class="btn-ls-teal mt-3 d-inline-block" style="font-size:0.75rem;padding:0.5rem 1.2rem;">Explore →</a>
+        </div>
+      </div>
+    </div>
+    <p class="text-center mt-4 serif fst-italic" style="color:rgba(250,246,238,0.45);font-size:1.2rem;" data-anim="fade-up" data-delay="600">Together, these create lasting transformation.</p>
+  </div>
+</section>
+
+<!-- ══ PROGRAMS ══════════════════════════════════════════ -->
+<section class="py-5 bg-ls-cream" style="padding:5rem 0;">
+  <div class="container">
+    <div class="mb-5" data-anim="fade-up">
+      <span class="section-eyebrow">Signature Programs</span>
+      <h2>Some of our flagship offerings</h2>
+    </div>
+    <div class="row g-4" data-stagger="100">
+      {% for p in programs[:6] %}
+      <div class="col-md-6 col-lg-4">
+        <div class="ls-card p-4 h-100">
+          <span class="ls-tag ls-tag-{{ p['category'] }}">{{ p['tag'] }}</span>
+          <div style="font-size:1.5rem;margin-bottom:0.5rem;">{{ p['icon'] }}</div>
+          <h5 style="font-size:1.15rem;">{{ p['title'] }}</h5>
+          <p style="font-size:0.83rem;color:var(--ls-text-muted);">{{ p['description'] }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="text-center mt-4" data-anim="scale-in" data-delay="400">
+      <a href="/services" class="btn-ls-green">View All Programs →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SHUDDHI HIGHLIGHT ═════════════════════════════════ -->
+<section class="ls-shuddhi-bg py-5" style="padding:5rem 0;">
+  <div class="container text-center position-relative" style="z-index:1;">
+    <span class="section-eyebrow" data-anim="fade-down">Lightseed Shuddhi: Mandatory Compliance</span>
+    <h2 class="text-cream" style="font-size:clamp(2rem,4.5vw,3.5rem);" data-anim="blur-in" data-delay="100">
+      Before performance.<br>Before growth.<br><em style="color:var(--ls-gold);">There must be safety.</em>
+    </h2>
+    <p class="mx-auto mt-3 mb-4" style="max-width:540px;color:rgba(250,246,238,0.55);line-height:1.8;" data-anim="fade-up" data-delay="200">
+      In India, these are not advisory guidelines. They are legal obligations, and Lightseed Shuddhi helps institutions fulfil them with depth and awareness.
+    </p>
+    <div class="row g-3 my-4" data-stagger="150">
+      <div class="col-md-4">
+        <div class="ls-law-card">
+          <span class="ls-law-badge">POSH Act 2013</span>
+          <h5 style="font-size:1.05rem;color:var(--ls-cream);">Sexual Harassment Prevention</h5>
+          <p style="font-size:0.8rem;color:rgba(250,246,238,0.5);">Every organisation must constitute an Internal Committee and conduct mandatory sensitisation programs.</p>
+          <span class="ls-law-stat">Legal obligation</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="ls-law-card">
+          <span class="ls-law-badge">POCSO Act 2012</span>
+          <h5 style="font-size:1.05rem;color:var(--ls-cream);">Child Protection & Safety</h5>
+          <p style="font-size:0.8rem;color:rgba(250,246,238,0.5);">Section 19: Mandatory Reporting. Failure to report carries legal consequences.</p>
+          <span class="ls-law-stat" data-anim="scale-in" data-count="53000" data-suffix="+">53,000+</span>
+          <p style="font-size:0.7rem;color:rgba(250,246,238,0.35);">POCSO cases registered annually</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="ls-law-card">
+          <span class="ls-law-badge">DEI</span>
+          <h5 style="font-size:1.05rem;color:var(--ls-cream);">Diversity, Equity & Inclusion</h5>
+          <p style="font-size:0.8rem;color:rgba(250,246,238,0.5);">Building inclusive, respectful and equitable environments at every institutional level.</p>
+          <span class="ls-law-stat">Culture shift</span>
+        </div>
+      </div>
+    </div>
+    <a href="/shuddhi" class="btn-ls-primary" data-anim="scale-in" data-delay="500">Build a Safe & Responsible Institution →</a>
+  </div>
+</section>
+
+<!-- ══ STATS ══════════════════════════════════════════════ -->
+<section class="py-5 bg-ls-green" style="padding:4rem 0;">
+  <div class="container">
+    <div class="row g-3 text-center" data-stagger="130">
+      <div class="col-6 col-md-3">
+        <div class="ls-stat-card">
+          <div class="ls-stat-num" data-count="10" data-suffix="+">10+</div>
+          <div class="ls-stat-label">Years of Experience</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="ls-stat-card">
+          <div class="ls-stat-num" data-count="500" data-suffix="+">500+</div>
+          <div class="ls-stat-label">Programs Delivered</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="ls-stat-card">
+          <div class="ls-stat-num" data-count="200" data-suffix="+">200+</div>
+          <div class="ls-stat-label">Organisations Served</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="ls-stat-card">
+          <div class="ls-stat-num" data-count="15000" data-suffix="+">15,000+</div>
+          <div class="ls-stat-label">Lives Impacted</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOUNDER NOTE ══════════════════════════════════════ -->
+<section class="py-5 bg-ls-cream-dark" style="padding:5rem 0;">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-12 col-lg-4">
+        <div class="ls-founder-portrait" data-anim="scale-in">
+          <img src="{{ url_for('static', filename='images/team/team.jpeg') }}"
+               alt="Mini Gupta, Founder Lightseed">
+          <div class="ls-founder-caption">
+            <p class="text-gold serif mb-0" style="font-size:1.1rem;">Mini Gupta</p>
+            <p style="color:rgba(250,246,238,0.55);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;margin:0;">Founder & CEO, Lightseed Solutions LLP</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-8" data-anim="fade-right" data-delay="200">
+        <span class="section-eyebrow">A Message from the Founder</span>
+        <blockquote style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,2.5vw,1.8rem);line-height:1.5;color:var(--ls-dark);font-style:italic;border-left:3px solid var(--ls-gold);padding-left:1.5rem;margin-bottom:1.5rem;">
+          "Lightseed was born at the intersection of lived experience and disciplined inquiry. Real transformation begins within and extends outward into every organisation, institution and individual we work with."
+        </blockquote>
+        <p style="color:var(--ls-text-muted);line-height:1.8;font-size:0.9rem;">
+          At Lightseed, we combine psychological depth, behavioural insight and practical application to create change that is ethical, meaningful and sustainable.
+        </p>
+        <p style="font-size:0.85rem;margin-top:1.5rem;">
+          <strong style="color:var(--ls-green-mid);">Mini Gupta</strong>, Founder & CEO
+        </p>
+        <a href="/about" class="btn-ls-green mt-2 d-inline-block">Meet the Team →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══════════════════════════════════════ -->
+<section class="py-5 bg-ls-dark" style="padding:5rem 0;position:relative;overflow:hidden;">
+  <div class="container">
+    <div class="text-center mb-5" data-anim="fade-up">
+      <span class="section-eyebrow">What People Say</span>
+      <h2 class="text-cream">Voices of Transformation</h2>
+    </div>
+    <div class="row g-4" data-stagger="120">
+      {% for t in testimonials %}
+      <div class="col-md-6 col-lg-4">
+        <div class="ls-testimonial h-100">
+          <div class="ls-stars">★★★★★</div>
+          <blockquote>"{{ t['content'] }}"</blockquote>
+          <div class="ls-testimonial-author">{{ t['author'] }}</div>
+          {% if t['org'] %}<div class="ls-testimonial-org">{{ t['org'] }}</div>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="text-center mt-4" data-anim="fade-up" data-delay="400">
+      <a href="/testimonials" class="btn-ls-primary">Read All Testimonials →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INVITATION / CTA ══════════════════════════════════ -->
+<section class="ls-invitation py-5 text-center" style="padding:6rem 0;">
+  <div class="container position-relative" style="z-index:1;">
+    <span class="section-eyebrow" style="color:var(--ls-gold-light);" data-anim="fade-down">Begin the Conversation</span>
+    <h2 class="text-cream" style="font-size:clamp(1.8rem,4vw,3.2rem);" data-anim="blur-in" data-delay="100">
+      Transformation does not begin with tools.<br>It begins with <em style="color:var(--ls-gold-light);">willingness.</em>
+    </h2>
+    <p class="mx-auto mt-3 mb-4" style="max-width:480px;color:rgba(250,246,238,0.65);line-height:1.8;" data-anim="fade-up" data-delay="250">
+      If you are ready to build emotionally intelligent leaders, resilient teams and conscious cultures, we invite you to begin the conversation.
+    </p>
+    <a href="/contact" class="btn-ls-primary" data-anim="scale-in" data-delay="380">Partner With Lightseed</a>
+  </div>
+</section>
+
+#}
+
+<!-- ══ SOCIAL FEED ═══════════════════════════════════════ -->
+<section class="py-5 bg-ls-cream-dark" style="padding:5rem 0;">
+  <div class="container">
+    <div class="d-flex flex-wrap justify-content-between align-items-end mb-4">
+      <div>
+        <span class="section-eyebrow">Stay Connected</span>
+        <h3 class="mb-0">Latest from Lightseed</h3>
+        <p style="color:var(--ls-text-muted);font-size:0.85rem;margin-top:0.25rem;">Real work. Real conversations. Shared as they evolve.</p>
+      </div>
+      <div class="d-flex flex-wrap gap-2 mt-3">
+        <button class="btn-ls-green" style="font-size:0.75rem;padding:0.45rem 1rem;" onclick="switchFeed('instagram')">📸 Instagram</button>
+        <button class="btn-ls-outline" style="font-size:0.75rem;padding:0.45rem 1rem;color:var(--ls-dark);border-color:rgba(0,0,0,0.2);background:transparent;" onclick="switchFeed('youtube')">▶ YouTube</button>
+        <button class="btn-ls-outline" style="font-size:0.75rem;padding:0.45rem 1rem;color:var(--ls-dark);border-color:rgba(0,0,0,0.2);background:transparent;" onclick="switchFeed('linkedin')">in LinkedIn</button>
+      </div>
+    </div>
+    <div id="feedGrid" class="row g-3">
+      <!-- Populated by JS switchFeed() -->
+    </div>
+    <p class="text-center mt-3" style="font-size:0.75rem;color:var(--ls-text-muted);">Connect social profiles to display live posts.</p>
+  </div>
+</section>
+
+<!-- ══ NISCHINT SPOTLIGHT MODAL ═══════════════════════════ -->
+<div class="modal fade" id="nischintModal" tabindex="-1" aria-labelledby="nischintModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content ls-nischint-modal">
+      <button type="button" class="btn-close btn-close-white ls-nischint-modal-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="row g-0">
+        <div class="col-md-5 ls-nischint-modal-media">
+          <img src="{{ url_for('static', filename='images/learners.jpg') }}" alt="Nischint employability framework for university and college students">
+        </div>
+        <div class="col-md-7 ls-nischint-modal-body">
+          <span class="ls-law-badge">Lightseed's Flagship Program</span>
+          <h3 id="nischintModalLabel">Nischint</h3>
+          <p class="ls-nischint-modal-tagline">Employability Framework, campus confidence to career readiness. Nischint se.</p>
+          <p class="ls-nischint-modal-desc">A four-year student development ecosystem for universities & colleges, from self-awareness and communication to AI literacy, leadership and an intensive Placement Lab.</p>
+          <div class="d-flex gap-3 flex-wrap mt-4">
+            <a href="/nischint" class="btn-ls-primary">Explore Nischint</a>
+            <button type="button" class="btn-ls-outline" data-bs-dismiss="modal">Maybe Later</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>switchFeed('instagram');</script>
+<script>
+  // Spotlight the Nischint flagship program on first homepage load per browser session.
+  // User can close via the × button, "Maybe Later", backdrop click, or Esc.
+  document.addEventListener('DOMContentLoaded', function () {
+    var modalEl = document.getElementById('nischintModal');
+    if (!modalEl || sessionStorage.getItem('nischintModalShown')) return;
+    var nischintModal = new bootstrap.Modal(modalEl);
+    setTimeout(function () { nischintModal.show(); }, 900);
+    sessionStorage.setItem('nischintModalShown', '1');
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,63 @@
+<svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" style="">
+  <!-- Triangle -->
+  <path d="M150 25 L270 240 L30 240 Z" stroke="#D4A64A" stroke-width="6" fill="transparent" style="fill:rgba(0, 0, 0, 0);stroke:rgb(212, 166, 74);color:rgb(0, 0, 0);stroke-width:6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Sun -->
+  <circle cx="150" cy="95" r="18" stroke="#D4A64A" stroke-width="4" style="fill:none;stroke:rgb(212, 166, 74);color:rgb(0, 0, 0);stroke-width:4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Rays from (150,180) to triangle edges -->
+  <!-- Left edge: from (150,25) to (30,240). Parametric: x=150-120t, y=25+215t -->
+  <!-- Right edge: from (150,25) to (270,240). Parametric: x=150+120t, y=25+215t -->
+  <!-- For a ray from (150,180) to target (tx,ty), find intersection with triangle sides -->
+
+  <!-- Ray to left-far: (70,120) extended to left side intersection -->
+  <!-- Line from (150,180) dir (-80,-60): parametric (150-80s, 180-60s) -->
+  <!-- Left side: x=150-120t, y=25+215t → solve: 150-80s=150-120t and 180-60s=25+215t -->
+  <!-- 80s=120t → s=1.5t; 180-90t=25+215t → 155=305t → t=0.508, s=0.762 -->
+  <!-- x=150-120*0.508=89, y=25+215*0.508=134 -->
+  <line x1="150" y1="180" x2="89" y2="134" stroke="#D4A64A" stroke-width="2" style="fill:none;stroke:rgb(212, 166, 74);color:rgb(0, 0, 0);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Ray to (90,120): dir (-60,-60) -->
+  <!-- Left side: 60s=120t→s=2t; 180-60s=25+215t→180-120t=25+215t→155=335t→t=0.463,s=0.925 -->
+  <!-- x=150-120*0.463=94.4, y=25+215*0.463=124.5 -->
+  <line x1="150" y1="180" x2="94" y2="125" stroke="#D4A64A" stroke-width="2" style="fill:none;stroke:rgb(212, 166, 74);color:rgb(0, 0, 0);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Ray to (110,120): dir (-40,-60) -->
+  <!-- Left side: 40s=120t→s=3t; 180-60s=25+215t→180-180t=25+215t→155=395t→t=0.392,s=1.177 -->
+  <!-- x=150-120*0.392=102.9, y=25+215*0.392=109.3 -->
+  <line x1="150" y1="180" x2="103" y2="109" stroke="#D4A64A" stroke-width="2" style="fill:none;stroke:rgb(212, 166, 74);color:rgb(0, 0, 0);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Ray to (130,120): dir (-20,-60) -->
+  <!-- Left side: 20s=120t→s=6t; 180-60s=25+215t→180-360t=25+215t→155=575t→t=0.270,s=1.617 -->
+  <!-- x=150-120*0.270=117.6, y=25+215*0.270=83.0 -->
+  <!-- But y=83 < 25? That's above apex! Means it hits the left side high up - check: y=25+215*0.270=83>25 ✓ -->
+  <line x1="150" y1="180" x2="118" y2="83" stroke="#D4A64A" stroke-width="2" style="fill:none;stroke:rgb(212, 166, 74);color:rgb(0, 0, 0);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Ray straight up (150,120): dir (0,-60) -->
+  <!-- Goes straight up, hits apex area. Triangle apex at (150,25). Hits left or right side at x=150 → t where x=150: -->
+  <!-- Left side: 150-120t=150→t=0, y=25. Right side same. So it goes to apex (150,25) -->
+  <line x1="150" y1="180" x2="150" y2="25" stroke="#D4A64A" stroke-width="2" style="fill:none;stroke:rgb(212, 166, 74);color:rgb(0, 0, 0);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Ray to (170,120): dir (20,-60) -->
+  <!-- Right side: x=150+120t, y=25+215t; 150+20s=150+120t and 180-60s=25+215t -->
+  <!-- 20s=120t→s=6t; 180-360t=25+215t→155=575t→t=0.270 → x=150+120*0.270=182.4, y=25+215*0.270=83 -->
+  <line x1="150" y1="180" x2="182" y2="83" stroke="#D4A64A" stroke-width="2" style="fill:none;stroke:rgb(212, 166, 74);color:rgb(0, 0, 0);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Ray to (190,120): dir (40,-60) -->
+  <!-- Right side: 40s=120t→s=3t; 180-180t=25+215t→155=395t→t=0.392 → x=150+120*0.392=197, y=109 -->
+  <line x1="150" y1="180" x2="197" y2="109" stroke="#D4A64A" stroke-width="2" style="fill:none;stroke:rgb(212, 166, 74);color:rgb(0, 0, 0);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Ray to (210,120): dir (60,-60) -->
+  <!-- Right side: 60s=120t→s=2t; 180-120t=25+215t→155=335t→t=0.463 → x=150+120*0.463=206, y=125 -->
+  <line x1="150" y1="180" x2="206" y2="125" stroke="#D4A64A" stroke-width="2" style="fill:none;stroke:rgb(212, 166, 74);color:rgb(0, 0, 0);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Ray to (230,120): dir (80,-60) -->
+  <!-- Right side: 80s=120t→s=1.5t; 180-90t=25+215t→155=305t→t=0.508 → x=150+120*0.508=211, y=134 -->
+  <line x1="150" y1="180" x2="211" y2="134" stroke="#D4A64A" stroke-width="2" style="fill:none;stroke:rgb(212, 166, 74);color:rgb(0, 0, 0);stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Seed -->
+  <path d="M150 160 C120 190,125 240,150 270 C175 240,180 190,150 160 Z" stroke="#D4A64A" stroke-width="4" fill="#D4A64A" style="fill:rgb(212, 166, 74);stroke:rgb(212, 166, 74);color:rgb(0, 0, 0);stroke-width:4px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <!-- Lines -->
+  <line x1="55" y1="190" x2="120" y2="190" stroke="#D4A64A" stroke-width="5" style="fill:none;stroke:rgb(212, 166, 74);color:rgb(0, 0, 0);stroke-width:5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="45" y1="215" x2="110" y2="215" stroke="#D4A64A" stroke-width="5" style="fill:none;stroke:rgb(212, 166, 74);color:rgb(0, 0, 0);stroke-width:5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="180" y1="190" x2="245" y2="190" stroke="#D4A64A" stroke-width="5" style="fill:none;stroke:rgb(212, 166, 74);color:rgb(0, 0, 0);stroke-width:5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <line x1="190" y1="215" x2="255" y2="215" stroke="#D4A64A" stroke-width="5" style="fill:none;stroke:rgb(212, 166, 74);color:rgb(0, 0, 0);stroke-width:5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+</svg>
