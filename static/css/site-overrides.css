@@ -1,0 +1,86 @@
+/* Lightseed site refinements */
+
+/* Stronger brand presence in the header and a complete footer mark. */
+.ls-navbar .navbar-brand img {
+  height: 72px;
+  max-width: 210px;
+  object-fit: contain;
+}
+.ls-navbar.scrolled .navbar-brand img { height: 52px; }
+.ls-footer img[alt="Lightseed"] {
+  width: 72px !important;
+  height: 72px !important;
+  padding: 5px;
+  object-fit: contain !important;
+  background: rgba(255,255,255,0.03);
+}
+
+/* Make the homepage proposition immediately understandable. */
+.ls-hero .carousel-item:nth-child(1) .ls-hero-content h1::after {
+  content: "Leadership, behavioural and workplace-development programs that turn human potential into practical performance.";
+  display: block;
+  max-width: 720px;
+  margin-top: 0.9rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.65;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: rgba(250,246,238,0.82);
+}
+.ls-hero .carousel-item:nth-child(2) .ls-hero-content h1::after {
+  content: "Practical leadership development for stronger teams, clearer decisions and more responsible workplaces.";
+  display: block;
+  max-width: 680px;
+  margin-top: 0.9rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.65;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: rgba(250,246,238,0.82);
+}
+.ls-hero .carousel-item:nth-child(3) .ls-hero-content h1::after {
+  content: "Integrated wellbeing, therapy and coaching pathways that support resilience, awareness and sustainable change.";
+  display: block;
+  max-width: 680px;
+  margin-top: 0.9rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.65;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: rgba(250,246,238,0.82);
+}
+
+/* The Impact numbers now have context instead of appearing as isolated figures. */
+.ls-home-stat-grid::before {
+  content: "A decade of work across leadership, institutional safety, employability and wellbeing — measured through programs delivered, organisations served and people reached.";
+  grid-column: 1 / -1;
+  display: block;
+  max-width: 760px;
+  margin: -0.5rem auto 0.5rem;
+  text-align: center;
+  color: var(--ls-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Replace visual emoji-style treatment with the site's existing icon language. */
+.ls-training-icon {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--ls-green-pale);
+  color: var(--ls-green-deep);
+  font-size: 1.15rem;
+  margin-bottom: 0.8rem;
+}
+
+@media (max-width: 991.98px) {
+  .ls-navbar .navbar-brand img { height: 58px; max-width: 180px; }
+  .ls-navbar.scrolled .navbar-brand img { height: 46px; }
+}
