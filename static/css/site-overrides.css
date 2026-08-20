@@ -86,7 +86,7 @@
   .ls-navbar.scrolled .navbar-brand img { height: 46px; }
 }
 
-/* Mobile hero: compact stacked composition. */
+/* Mobile hero: compact overlay composition so the message and photograph are visible together. */
 @media (max-width: 767.98px) {
   .ls-hero,
   .ls-hero-slider,
@@ -97,25 +97,74 @@
   }
 
   .ls-hero-slider .carousel-item {
-    display: flex;
-    flex-direction: column;
-    padding-top: 0;
+    position: relative;
+    display: block;
+    height: min(720px, calc(100svh - 70px)) !important;
+    min-height: 610px !important;
+    overflow: hidden;
     background: var(--ls-green-deep, #0b1d17);
+  }
+
+  /* Full-bleed photo: the text now sits over the photograph rather than above it. */
+  .ls-hero-slider .ls-hero-slide-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    max-height: none;
+    overflow: hidden;
+  }
+
+  .ls-hero-slider .ls-hero-slide-bg img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transform: none !important;
+  }
+
+  /* Keep the important people visible on each slide. */
+  .ls-hero-slider .carousel-item:nth-child(1) .ls-hero-slide-bg img {
+    object-position: 68% 45%;
+  }
+  .ls-hero-slider .carousel-item:nth-child(2) .ls-hero-slide-bg img {
+    object-position: 68% 42%;
+  }
+  .ls-hero-slider .carousel-item:nth-child(3) .ls-hero-slide-bg img {
+    object-position: 55% 42%;
+  }
+
+  /* Soft dark-to-transparent overlay: strong enough for text, light enough to show the image immediately. */
+  .ls-hero-slider .ls-hero-layer {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(90deg, rgba(5, 22, 16, 0.88) 0%, rgba(5, 22, 16, 0.68) 44%, rgba(5, 22, 16, 0.18) 78%, rgba(5, 22, 16, 0.08) 100%),
+      linear-gradient(180deg, rgba(5, 22, 16, 0.38) 0%, rgba(5, 22, 16, 0.08) 38%, rgba(5, 22, 16, 0.42) 100%);
   }
 
   .ls-hero-slider .ls-hero-content {
     position: relative;
     inset: auto;
-    order: 1;
+    z-index: 2;
     width: 100%;
+    height: 100%;
     min-height: 0;
-    padding: 10px 18px 15px;
-    display: block;
-    background: var(--ls-green-deep, #0b1d17);
+    padding: 0 24px 88px;
+    display: flex;
+    align-items: center;
+    background: transparent;
   }
 
   .ls-hero-slider .ls-hero-content .row,
   .ls-hero-slider .ls-hero-content .row.min-vh-100 {
+    width: 100%;
     min-height: 0 !important;
     height: auto !important;
     padding-top: 0 !important;
@@ -132,58 +181,44 @@
     padding-bottom: 0 !important;
   }
 
-  .ls-hero-slider .ls-hero-slide-bg {
-    position: relative;
-    order: 2;
-    inset: auto;
-    width: 100%;
-    height: 68vw;
-    min-height: 250px;
-    max-height: 370px;
-    overflow: hidden;
+  .ls-hero-slider .ls-hero-content .col-12 {
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  .ls-hero-slider .ls-hero-slide-bg img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 35%;
-    transform: none !important;
-  }
-
-  .ls-hero-slider .carousel-item:nth-child(1) .ls-hero-slide-bg img,
-  .ls-hero-slider .carousel-item:nth-child(2) .ls-hero-slide-bg img {
-    object-position: 68% 38%;
-  }
-
-  .ls-hero-slider .carousel-item:nth-child(3) .ls-hero-slide-bg img {
-    object-position: 55% 38%;
-  }
-
-  .ls-hero-slider .ls-hero-layer {
-    display: none;
+  .ls-hero-slider .ls-hero-content .eyebrow {
+    display: inline-block;
+    margin-bottom: 0.7rem;
+    text-shadow: 0 1px 14px rgba(0,0,0,0.35);
   }
 
   .ls-hero-slider .ls-hero-content h1 {
-    font-size: clamp(2.25rem, 10.5vw, 3.05rem);
+    font-size: clamp(2.35rem, 10.5vw, 3.15rem);
     line-height: 0.98;
-    margin-bottom: 9px;
+    margin-bottom: 10px;
     max-width: 9ch;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.3);
   }
 
   .ls-hero-slider .ls-hero-content h1::after {
-    max-width: 34ch;
-    margin-top: 0.5rem;
-    font-size: 0.91rem;
-    line-height: 1.45;
+    max-width: 31ch;
+    margin-top: 0.65rem;
+    font-size: 0.92rem;
+    line-height: 1.48;
+    text-shadow: 0 1px 12px rgba(0,0,0,0.3);
+  }
+
+  .ls-hero-slider .ls-hero-content .d-flex {
+    gap: 0.55rem !important;
+    margin-top: 0.85rem;
   }
 
   .ls-hero-slider .ls-hero-content .btn-ls-primary,
   .ls-hero-slider .ls-hero-content .btn-ls-outline {
-    padding: 0.56rem 0.82rem;
+    padding: 0.62rem 0.82rem;
     font-size: 0.67rem;
+    white-space: nowrap;
+    backdrop-filter: blur(4px);
   }
 
   .ls-hero-slider .carousel-control-prev,
@@ -193,6 +228,8 @@
     width: 42px;
     height: 42px;
     z-index: 7;
+    background: rgba(0,0,0,0.12);
+    border-radius: 50%;
   }
 
   .ls-hero-slider .carousel-control-prev { left: 10px; }
@@ -200,8 +237,8 @@
 
   .ls-hero-slider .carousel-control-prev-icon,
   .ls-hero-slider .carousel-control-next-icon {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.35rem;
+    height: 1.35rem;
   }
 
   .ls-hero-slider .ls-hero-indicators {
@@ -210,7 +247,7 @@
   }
 
   .ls-hero-slider .ls-hero-indicators [data-bs-target] {
-    width: 25px;
+    width: 24px;
     height: 3px;
   }
 
@@ -221,11 +258,14 @@
 
 @media (max-width: 390px) {
   .ls-hero-slider .carousel-item {
-    padding-top: 0;
+    height: min(690px, calc(100svh - 64px)) !important;
+    min-height: 570px !important;
   }
 
   .ls-hero-slider .ls-hero-content {
-    padding: 8px 18px 13px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-bottom: 78px;
   }
 
   .ls-hero-slider .ls-hero-content h1 {
@@ -234,10 +274,5 @@
 
   .ls-hero-slider .ls-hero-content h1::after {
     font-size: 0.88rem;
-  }
-
-  .ls-hero-slider .ls-hero-slide-bg {
-    height: 70vw;
-    min-height: 240px;
   }
 }
