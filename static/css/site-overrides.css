@@ -86,8 +86,8 @@
   .ls-navbar.scrolled .navbar-brand img { height: 46px; }
 }
 
-/* Mobile hero: stack the message above the photograph. This avoids the large
-   desktop image being cropped behind the text on portrait screens. */
+/* Mobile hero: compact stacked composition. The text block is shorter and the
+   photograph gets enough height to show the subject without excessive empty space. */
 @media (max-width: 767.98px) {
   .ls-hero,
   .ls-hero-slider,
@@ -110,7 +110,7 @@
     order: 1;
     width: 100%;
     min-height: 0;
-    padding: 24px 18px 20px;
+    padding: 14px 18px 16px;
     display: block;
     background: var(--ls-green-deep, #0b1d17);
   }
@@ -127,9 +127,9 @@
     order: 2;
     inset: auto;
     width: 100%;
-    height: 58vw;
-    min-height: 245px;
-    max-height: 340px;
+    height: 62vw;
+    min-height: 255px;
+    max-height: 360px;
     overflow: hidden;
   }
 
@@ -143,7 +143,7 @@
     transform: none !important;
   }
 
-  /* Keep the main person visible on the training photograph. */
+  /* Keep the main person/group visible on the hero photographs. */
   .ls-hero-slider .carousel-item:nth-child(1) .ls-hero-slide-bg img,
   .ls-hero-slider .carousel-item:nth-child(2) .ls-hero-slide-bg img {
     object-position: 68% 38%;
@@ -158,23 +158,23 @@
   }
 
   .ls-hero-slider .ls-hero-content h1 {
-    font-size: clamp(2.35rem, 11vw, 3.2rem);
+    font-size: clamp(2.25rem, 10.5vw, 3.05rem);
     line-height: 0.98;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     max-width: 9ch;
   }
 
   .ls-hero-slider .ls-hero-content h1::after {
     max-width: 34ch;
-    margin-top: 0.7rem;
-    font-size: 0.96rem;
-    line-height: 1.5;
+    margin-top: 0.55rem;
+    font-size: 0.91rem;
+    line-height: 1.46;
   }
 
   .ls-hero-slider .ls-hero-content .btn-ls-primary,
   .ls-hero-slider .ls-hero-content .btn-ls-outline {
-    padding: 0.62rem 0.9rem;
-    font-size: 0.7rem;
+    padding: 0.58rem 0.85rem;
+    font-size: 0.68rem;
   }
 
   .ls-hero-slider .carousel-control-prev,
@@ -212,19 +212,19 @@
 
 @media (max-width: 390px) {
   .ls-hero-slider .ls-hero-content {
-    padding: 22px 18px 18px;
+    padding: 12px 18px 14px;
   }
 
   .ls-hero-slider .ls-hero-content h1 {
-    font-size: 2.3rem;
+    font-size: 2.25rem;
   }
 
   .ls-hero-slider .ls-hero-content h1::after {
-    font-size: 0.92rem;
+    font-size: 0.88rem;
   }
 
   .ls-hero-slider .ls-hero-slide-bg {
-    height: 64vw;
-    min-height: 235px;
+    height: 66vw;
+    min-height: 240px;
   }
 }
