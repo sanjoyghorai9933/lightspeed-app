@@ -88,6 +88,93 @@
 
 /* Mobile hero: compact overlay composition so the message and photograph are visible together. */
 @media (max-width: 767.98px) {
+  /* Mobile navigation overlays the hero, matching the premium image-first treatment. */
+  .ls-navbar.fixed-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+    background: linear-gradient(180deg, rgba(5,22,16,0.72) 0%, rgba(5,22,16,0.16) 100%) !important;
+    border-bottom: 1px solid rgba(250,246,238,0.08);
+    box-shadow: none !important;
+    transition: background 0.25s ease, backdrop-filter 0.25s ease;
+  }
+
+  .ls-navbar.fixed-top.scrolled {
+    position: fixed;
+    background: rgba(7,27,21,0.92) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .ls-navbar .container {
+    min-height: 70px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .ls-navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ls-navbar .navbar-brand img {
+    height: 58px;
+    width: auto;
+    max-width: 155px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.22));
+  }
+
+  .ls-navbar .brand-text { display: none !important; }
+
+  .ls-navbar .navbar-toggler {
+    width: 44px;
+    height: 44px;
+    padding: 9px;
+    margin-right: 0;
+    border-radius: 12px;
+    background: rgba(4,20,15,0.24);
+    box-shadow: none !important;
+  }
+
+  .ls-navbar .navbar-toggler:focus { box-shadow: none !important; }
+
+  .ls-navbar .navbar-toggler-icon {
+    width: 25px;
+    height: 25px;
+    background-image: none !important;
+    position: relative;
+    display: block;
+    border-top: 2px solid rgba(250,246,238,0.86);
+    border-bottom: 2px solid rgba(250,246,238,0.86);
+  }
+
+  .ls-navbar .navbar-toggler-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10px;
+    border-top: 2px solid rgba(250,246,238,0.86);
+  }
+
+  .ls-navbar .navbar-collapse {
+    margin-top: 8px;
+    padding: 10px 14px 14px;
+    border-radius: 14px;
+    background: rgba(7,27,21,0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(250,246,238,0.08);
+  }
+
+  .ls-navbar .nav-link { color: rgba(250,246,238,0.92) !important; }
+  .ls-navbar .btn-connect { text-align: center; margin-top: 6px; }
+
   .ls-hero,
   .ls-hero-slider,
   .ls-hero-slider .carousel-inner,
@@ -99,7 +186,7 @@
   .ls-hero-slider .carousel-item {
     position: relative;
     display: block;
-    height: min(720px, calc(100svh - 70px)) !important;
+    height: min(720px, 100svh) !important;
     min-height: 610px !important;
     overflow: hidden;
     background: var(--ls-green-deep, #0b1d17);
@@ -128,15 +215,9 @@
   }
 
   /* Keep the important people visible on each slide. */
-  .ls-hero-slider .carousel-item:nth-child(1) .ls-hero-slide-bg img {
-    object-position: 68% 45%;
-  }
-  .ls-hero-slider .carousel-item:nth-child(2) .ls-hero-slide-bg img {
-    object-position: 68% 42%;
-  }
-  .ls-hero-slider .carousel-item:nth-child(3) .ls-hero-slide-bg img {
-    object-position: 55% 42%;
-  }
+  .ls-hero-slider .carousel-item:nth-child(1) .ls-hero-slide-bg img { object-position: 68% 45%; }
+  .ls-hero-slider .carousel-item:nth-child(2) .ls-hero-slide-bg img { object-position: 68% 42%; }
+  .ls-hero-slider .carousel-item:nth-child(3) .ls-hero-slide-bg img { object-position: 55% 42%; }
 
   /* Soft dark-to-transparent overlay: strong enough for text, light enough to show the image immediately. */
   .ls-hero-slider .ls-hero-layer {
@@ -172,19 +253,9 @@
     margin: 0;
   }
 
-  .ls-hero-slider .ls-hero-content .row.g-5 {
-    --bs-gutter-y: 0 !important;
-  }
-
-  .ls-hero-slider .ls-hero-content .py-5 {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-
-  .ls-hero-slider .ls-hero-content .col-12 {
-    padding-left: 0;
-    padding-right: 0;
-  }
+  .ls-hero-slider .ls-hero-content .row.g-5 { --bs-gutter-y: 0 !important; }
+  .ls-hero-slider .ls-hero-content .py-5 { padding-top: 0 !important; padding-bottom: 0 !important; }
+  .ls-hero-slider .ls-hero-content .col-12 { padding-left: 0; padding-right: 0; }
 
   .ls-hero-slider .ls-hero-content .eyebrow {
     display: inline-block;
@@ -234,45 +305,25 @@
 
   .ls-hero-slider .carousel-control-prev { left: 10px; }
   .ls-hero-slider .carousel-control-next { right: 10px; }
-
   .ls-hero-slider .carousel-control-prev-icon,
-  .ls-hero-slider .carousel-control-next-icon {
-    width: 1.35rem;
-    height: 1.35rem;
-  }
-
-  .ls-hero-slider .ls-hero-indicators {
-    bottom: 7px;
-    z-index: 8;
-  }
-
-  .ls-hero-slider .ls-hero-indicators [data-bs-target] {
-    width: 24px;
-    height: 3px;
-  }
-
-  .ls-hero-slider .ls-hero-indicators .active {
-    width: 38px;
-  }
+  .ls-hero-slider .carousel-control-next-icon { width: 1.35rem; height: 1.35rem; }
+  .ls-hero-slider .ls-hero-indicators { bottom: 7px; z-index: 8; }
+  .ls-hero-slider .ls-hero-indicators [data-bs-target] { width: 24px; height: 3px; }
+  .ls-hero-slider .ls-hero-indicators .active { width: 38px; }
 }
 
 @media (max-width: 390px) {
+  .ls-navbar .container { min-height: 64px; }
+  .ls-navbar .navbar-brand img { height: 52px; }
   .ls-hero-slider .carousel-item {
-    height: min(690px, calc(100svh - 64px)) !important;
+    height: min(690px, 100svh) !important;
     min-height: 570px !important;
   }
-
   .ls-hero-slider .ls-hero-content {
     padding-left: 18px;
     padding-right: 18px;
     padding-bottom: 78px;
   }
-
-  .ls-hero-slider .ls-hero-content h1 {
-    font-size: 2.25rem;
-  }
-
-  .ls-hero-slider .ls-hero-content h1::after {
-    font-size: 0.88rem;
-  }
+  .ls-hero-slider .ls-hero-content h1 { font-size: 2.25rem; }
+  .ls-hero-slider .ls-hero-content h1::after { font-size: 0.88rem; }
 }
