@@ -114,3 +114,20 @@
   .ls-hero-slider .ls-hero-content { padding-left:18px;padding-right:18px;padding-bottom:78px; }
   .ls-hero-slider .ls-hero-content h1 { font-size:2.25rem; }.ls-hero-slider .ls-hero-content h1::after { font-size:.88rem; }
 }
+
+/* Mobile hero should touch the viewport edges: no outer card spacing, margin or rounded frame. */
+@media (max-width:767.98px) {
+  html, body { margin:0 !important; padding:0 !important; }
+  .ls-hero,
+  .ls-hero-slider-wrap,
+  .ls-hero-slider,
+  .ls-hero-slider .carousel-inner,
+  .ls-hero-slider .carousel-item {
+    width:100% !important;
+    margin:0 !important;
+    border-radius:0 !important;
+    box-shadow:none !important;
+  }
+  .ls-hero-slider-wrap { padding:0 !important; }
+  .ls-hero-slider .carousel-item { min-height:100svh !important; }
+}
