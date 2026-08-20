@@ -80,6 +80,112 @@
   margin-bottom: 0.8rem;
 }
 
+/* Mobile hero: use a stacked composition instead of cropping a wide desktop image
+   across the full portrait viewport. This keeps the people/subjects visible and
+   gives the hero copy enough room to breathe on phones. */
+@media (max-width: 767.98px) {
+  .ls-hero,
+  .ls-hero-slider,
+  .ls-hero-slider .carousel-inner,
+  .ls-hero-slider .carousel-item {
+    min-height: 100svh;
+  }
+
+  .ls-hero .carousel-item {
+    padding-top: 72px;
+  }
+
+  .ls-hero-slide-bg {
+    top: 43%;
+    height: 57%;
+  }
+
+  .ls-hero-slide-bg img {
+    transform: none !important;
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .ls-hero-slider .carousel-item:nth-child(1) .ls-hero-slide-bg img {
+    object-position: 68% center;
+  }
+
+  .ls-hero-slider .carousel-item:nth-child(2) .ls-hero-slide-bg img {
+    object-position: 52% center;
+  }
+
+  .ls-hero-slider .carousel-item:nth-child(3) .ls-hero-slide-bg img {
+    object-position: 55% center;
+  }
+
+  .ls-hero-layer {
+    background:
+      linear-gradient(180deg,
+        rgba(16,25,22,0.96) 0%,
+        rgba(16,25,22,0.88) 38%,
+        rgba(16,25,22,0.32) 56%,
+        rgba(16,25,22,0.22) 100%);
+  }
+
+  .ls-hero-content {
+    min-height: 43vh;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .ls-hero-content .row {
+    min-height: auto !important;
+    width: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .ls-hero h1 {
+    font-size: clamp(2.45rem, 12vw, 3.5rem);
+    line-height: 0.98;
+    margin-bottom: 0.7rem;
+    max-width: 8ch;
+  }
+
+  .ls-hero .ls-hero-content h1::after {
+    max-width: 34ch;
+    margin-top: 0.75rem;
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+
+  .ls-hero .btn-ls-primary,
+  .ls-hero .btn-ls-outline {
+    padding: 0.68rem 1rem;
+    font-size: 0.72rem;
+  }
+
+  .ls-hero-indicators {
+    bottom: 0.8rem;
+    gap: 0.4rem;
+  }
+
+  .ls-hero-indicators [data-bs-target] {
+    width: 28px;
+    height: 3px;
+  }
+
+  .ls-hero-indicators .active {
+    width: 42px;
+  }
+
+  .ls-hero-slider .carousel-control-prev,
+  .ls-hero-slider .carousel-control-next {
+    width: 12%;
+  }
+
+  .ls-hero-slider .carousel-control-prev-icon,
+  .ls-hero-slider .carousel-control-next-icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}
+
 @media (max-width: 991.98px) {
   .ls-navbar .navbar-brand img { height: 58px; max-width: 180px; }
   .ls-navbar.scrolled .navbar-brand img { height: 46px; }
