@@ -53,22 +53,27 @@
   .ls-navbar.scrolled .navbar-brand img { height:46px; }
 }
 
-/* Mobile: transparent navigation over the same full-bleed hero image. */
+/* Mobile: navigation floats directly on the hero image with no solid header block. */
 @media (max-width:767.98px) {
   .ls-navbar.fixed-top {
     position:absolute;top:0;left:0;right:0;z-index:1100;
-    background:linear-gradient(180deg,rgba(3,14,10,.52) 0%,rgba(3,14,10,.16) 55%,rgba(3,14,10,0) 100%) !important;
+    background:transparent !important;
     border-bottom:0 !important;box-shadow:none !important;backdrop-filter:none !important;-webkit-backdrop-filter:none !important;
   }
+  .ls-navbar.fixed-top::after {
+    content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:linear-gradient(180deg,rgba(3,14,10,.30) 0%,rgba(3,14,10,.10) 55%,rgba(3,14,10,0) 100%);
+  }
   .ls-navbar.fixed-top.scrolled {
-    position:fixed;background:linear-gradient(180deg,rgba(3,14,10,.84),rgba(3,14,10,.68)) !important;
+    position:fixed;background:rgba(3,14,10,.82) !important;
     backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(250,246,238,.08) !important;
   }
+  .ls-navbar.fixed-top.scrolled::after { display:none; }
   .ls-navbar .container { min-height:70px;padding-left:14px;padding-right:14px; }
   .ls-navbar .navbar-brand { display:flex;align-items:center;margin:0;padding:0; }
   .ls-navbar .navbar-brand img { height:58px;width:auto;max-width:155px;object-fit:contain;filter:drop-shadow(0 2px 8px rgba(0,0,0,.3)); }
   .ls-navbar .brand-text { display:none !important; }
-  .ls-navbar .navbar-toggler { width:44px;height:44px;padding:9px;margin-right:0;border-radius:12px;background:rgba(4,20,15,.20);box-shadow:none !important; }
+  .ls-navbar .navbar-toggler { width:44px;height:44px;padding:9px;margin-right:0;border-radius:12px;background:rgba(4,20,15,.12);box-shadow:none !important; }
   .ls-navbar .navbar-toggler:focus { box-shadow:none !important; }
   .ls-navbar .navbar-toggler-icon { width:25px;height:25px;background-image:none !important;position:relative;display:block;border-top:2px solid rgba(250,246,238,.9);border-bottom:2px solid rgba(250,246,238,.9); }
   .ls-navbar .navbar-toggler-icon::after { content:"";position:absolute;left:0;right:0;top:10px;border-top:2px solid rgba(250,246,238,.9); }
