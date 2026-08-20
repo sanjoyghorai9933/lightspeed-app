@@ -81,8 +81,10 @@
   .ls-navbar .nav-link { color:rgba(250,246,238,.94) !important; }
   .ls-navbar .btn-connect { text-align:center;margin-top:6px; }
 
+  /* Keep Bootstrap's carousel display rules intact. The previous display:block rule
+     caused every slide to remain rendered at once and prevented slide 2 from appearing. */
   .ls-hero,.ls-hero-slider,.ls-hero-slider .carousel-inner,.ls-hero-slider .carousel-item { min-height:0 !important;height:auto !important; }
-  .ls-hero-slider .carousel-item { position:relative;display:block;height:min(720px,100svh) !important;min-height:610px !important;overflow:hidden;background:#0b1d17; }
+  .ls-hero-slider .carousel-item { position:relative;height:min(720px,100svh) !important;min-height:610px !important;overflow:hidden;background:#0b1d17; }
   .ls-hero-slider .ls-hero-slide-bg { position:absolute;inset:0;z-index:0;width:100%;height:100%;overflow:hidden; }
   .ls-hero-slider .ls-hero-slide-bg img { position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;transform:none !important; }
   .ls-hero-slider .carousel-item:nth-child(1) .ls-hero-slide-bg img { object-position:68% 45%; }
