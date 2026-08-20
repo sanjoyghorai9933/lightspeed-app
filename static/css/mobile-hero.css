@@ -10,34 +10,21 @@
     background: #061b14;
   }
 
+  /* Shorter first-look hero: image and copy are visible together without pushing the next section too far down. */
   .ls-hero,
-  .ls-hero-slider {
+  .ls-hero-slider,
+  .ls-hero-slider .carousel-inner,
+  .ls-hero-slider .carousel-item {
     width: 100% !important;
-    min-height: 0 !important;
-    height: 82svh !important;
-    max-height: 820px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  .ls-hero-slider .carousel-inner {
-    width: 100% !important;
-    height: 82svh !important;
-    max-height: 820px !important;
+    height: 76svh !important;
+    max-height: 720px !important;
     min-height: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
-    overflow: hidden !important;
   }
 
   .ls-hero-slider .carousel-item {
     position: relative;
-    width: 100% !important;
-    height: 82svh !important;
-    max-height: 820px !important;
-    min-height: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
     overflow: hidden;
     background: #061b14;
   }
@@ -46,8 +33,9 @@
   .ls-hero-slider .ls-hero-slide-bg img {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
   }
 
   .ls-hero-slider .ls-hero-slide-bg {
@@ -55,112 +43,143 @@
     overflow: hidden;
   }
 
+  /* Keep the person/product area on the right so the copy has a clean reading area. */
   .ls-hero-slider .ls-hero-slide-bg img {
-    object-fit: cover;
-    object-position: center center;
+    object-fit: cover !important;
+    object-position: 74% center !important;
     transform: none !important;
   }
+  .ls-hero-slider .carousel-item:nth-child(1) .ls-hero-slide-bg img { object-position: 72% center !important; }
+  .ls-hero-slider .carousel-item:nth-child(2) .ls-hero-slide-bg img { object-position: 76% center !important; }
+  .ls-hero-slider .carousel-item:nth-child(3) .ls-hero-slide-bg img { object-position: 58% center !important; }
 
-  .ls-hero-slider .carousel-item:nth-child(1) .ls-hero-slide-bg img { object-position: 66% center; }
-  .ls-hero-slider .carousel-item:nth-child(2) .ls-hero-slide-bg img { object-position: 67% center; }
-  .ls-hero-slider .carousel-item:nth-child(3) .ls-hero-slide-bg img { object-position: 55% center; }
-
-  /* Lighter overlay: text stays readable while the photograph remains visible immediately. */
+  /* Light overlay: enough contrast for text, but the photograph remains obvious at first glance. */
   .ls-hero-slider .ls-hero-layer {
     display: block;
     position: absolute;
     inset: 0;
     z-index: 1;
     background:
-      linear-gradient(180deg, rgba(3,18,13,.28) 0%, rgba(3,18,13,.08) 34%, rgba(3,18,13,.10) 64%, rgba(3,18,13,.36) 100%),
-      linear-gradient(90deg, rgba(3,18,13,.58) 0%, rgba(3,18,13,.28) 38%, rgba(3,18,13,.08) 72%, rgba(3,18,13,.02) 100%);
+      linear-gradient(90deg, rgba(3,18,13,.40) 0%, rgba(3,18,13,.18) 40%, rgba(3,18,13,.04) 72%, rgba(3,18,13,.01) 100%),
+      linear-gradient(180deg, rgba(3,18,13,.16) 0%, rgba(3,18,13,.03) 42%, rgba(3,18,13,.08) 68%, rgba(3,18,13,.30) 100%) !important;
   }
 
   .ls-hero-slider .ls-hero-content {
     position: relative;
     inset: auto;
     z-index: 2;
-    width: 100%;
-    height: 100%;
-    min-height: 0;
-    padding: 0 24px 70px;
-    display: flex;
-    align-items: center;
-    background: transparent;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+    padding: 0 20px 58px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    background: transparent !important;
   }
 
   .ls-hero-slider .ls-hero-content .row,
   .ls-hero-slider .ls-hero-content .row.min-vh-100 {
-    width: 100%;
+    width: 100% !important;
     min-height: 0 !important;
     height: auto !important;
     padding: 0 !important;
-    margin: 0;
+    margin: 0 !important;
+    align-items: center !important;
   }
 
   .ls-hero-slider .ls-hero-content .row.g-5 { --bs-gutter-y: 0 !important; }
   .ls-hero-slider .ls-hero-content .py-5 { padding-top: 0 !important; padding-bottom: 0 !important; }
-  .ls-hero-slider .ls-hero-content .col-12 { padding-left: 0; padding-right: 0; max-width: 64%; }
-  .ls-hero-slider .ls-hero-content .eyebrow { display: inline-block; margin-bottom: .6rem; text-shadow: 0 2px 18px rgba(0,0,0,.45); }
+
+  /* Full column prevents the CTA row from being clipped on narrow phones. */
+  .ls-hero-slider .ls-hero-content .col-12 {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .ls-hero-slider .ls-hero-content .eyebrow {
+    display: inline-block;
+    margin-bottom: .55rem !important;
+    font-size: .60rem !important;
+    letter-spacing: .30em !important;
+    text-shadow: 0 2px 12px rgba(0,0,0,.48);
+  }
 
   .ls-hero-slider .ls-hero-content h1 {
-    font-size: clamp(2.3rem, 9.6vw, 3.35rem);
-    line-height: .98;
-    max-width: 9ch;
-    margin-bottom: 8px;
-    text-shadow: 0 3px 22px rgba(0,0,0,.48);
+    width: 68% !important;
+    max-width: 8ch !important;
+    font-size: clamp(2.35rem, 10vw, 3.25rem) !important;
+    line-height: .96 !important;
+    margin: 0 !important;
+    text-shadow: 0 3px 18px rgba(0,0,0,.52) !important;
   }
 
   .ls-hero-slider .ls-hero-content h1::after {
-    max-width: 30ch;
-    margin-top: .62rem;
-    font-size: .88rem;
-    line-height: 1.45;
-    text-shadow: 0 2px 15px rgba(0,0,0,.5);
+    display: block;
+    width: 76% !important;
+    max-width: 28ch !important;
+    margin-top: .72rem !important;
+    font-size: .84rem !important;
+    line-height: 1.48 !important;
+    text-shadow: 0 2px 13px rgba(0,0,0,.55) !important;
   }
 
-  .ls-hero-slider .ls-hero-content .d-flex { gap: .55rem !important; margin-top: .8rem; }
+  .ls-hero-slider .ls-hero-content .d-flex {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    gap: .45rem !important;
+    margin-top: .9rem !important;
+  }
+
   .ls-hero-slider .ls-hero-content .btn-ls-primary,
   .ls-hero-slider .ls-hero-content .btn-ls-outline {
-    padding: .62rem .78rem;
-    font-size: .63rem;
-    white-space: nowrap;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    flex: 0 0 auto !important;
+    padding: .60rem .72rem !important;
+    min-height: 40px !important;
+    font-size: .59rem !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
   }
 
-  /* Navigation floats over the hero. */
+  /* Navigation floats directly over the hero image. */
   .ls-navbar.fixed-top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1100;
-    width: 100%;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1100 !important;
+    width: 100% !important;
     margin: 0 !important;
-    background: linear-gradient(180deg, rgba(3,18,13,.48), rgba(3,18,13,.04)) !important;
+    background: linear-gradient(180deg, rgba(3,18,13,.38), rgba(3,18,13,.02)) !important;
     border: 0 !important;
     box-shadow: none !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
-    border-radius: 0;
+    border-radius: 0 !important;
   }
 
   .ls-navbar.fixed-top.scrolled {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
     background: rgba(3,18,13,.90) !important;
-    border-radius: 0;
+    border-radius: 0 !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
   }
 
-  .ls-navbar .container { min-height: 70px; padding-left: 18px; padding-right: 18px; }
-  .ls-navbar .navbar-brand img { height: 56px; width: auto; max-width: 160px; object-fit: contain; filter: drop-shadow(0 2px 9px rgba(0,0,0,.45)); }
+  .ls-navbar .container { min-height: 68px; padding-left: 18px; padding-right: 18px; }
+  .ls-navbar .navbar-brand img { height: 54px; width: auto; max-width: 155px; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(0,0,0,.45)); }
   .ls-navbar .brand-text { display: none !important; }
-  .ls-navbar .navbar-toggler { width: 44px; height: 44px; padding: 8px; border-radius: 12px; background: rgba(0,0,0,.10); box-shadow: none !important; }
+  .ls-navbar .navbar-toggler { width: 44px; height: 44px; padding: 8px; border-radius: 12px; background: rgba(0,0,0,.08); box-shadow: none !important; }
+  .ls-navbar .navbar-toggler:focus { box-shadow: none !important; }
   .ls-navbar .navbar-toggler-icon { width: 26px; height: 26px; background-image: none !important; position: relative; display: block; border-top: 3px solid rgba(250,246,238,.96); border-bottom: 3px solid rgba(250,246,238,.96); }
   .ls-navbar .navbar-toggler-icon::after { content: ""; position: absolute; left: 0; right: 0; top: 10px; border-top: 3px solid rgba(250,246,238,.96); }
   .ls-navbar .navbar-collapse { margin-top: 8px; padding: 10px 14px 14px; border-radius: 14px; background: rgba(7,27,21,.96); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(250,246,238,.08); }
@@ -172,32 +191,40 @@
     display: none !important;
   }
 
-  .ls-hero-slider .ls-hero-indicators { bottom: 16px; z-index: 8; }
-  .ls-hero-slider .ls-hero-indicators [data-bs-target] { width: 26px; height: 3px; margin-left: 4px; margin-right: 4px; opacity: .7; }
-  .ls-hero-slider .ls-hero-indicators .active { width: 38px; opacity: 1; }
+  .ls-hero-slider .ls-hero-indicators { bottom: 14px; z-index: 8; }
+  .ls-hero-slider .ls-hero-indicators [data-bs-target] { width: 24px; height: 3px; margin-left: 4px; margin-right: 4px; opacity: .68; }
+  .ls-hero-slider .ls-hero-indicators .active { width: 36px; opacity: 1; }
 }
 
 @media (max-width: 390px) {
   .ls-hero,
   .ls-hero-slider,
   .ls-hero-slider .carousel-inner,
-  .ls-hero-slider .carousel-item { height: 78svh !important; max-height: 700px !important; }
-  .ls-hero-slider .ls-hero-content { padding-left: 18px; padding-right: 18px; padding-bottom: 62px; }
-  .ls-navbar .container { min-height: 64px; }
-  .ls-navbar .navbar-brand img { height: 52px; }
-  .ls-hero-slider .ls-hero-content .col-12 { max-width: 67%; }
-  .ls-hero-slider .ls-hero-content h1 { font-size: 2.2rem; }
-  .ls-hero-slider .ls-hero-content h1::after { font-size: .82rem; }
+  .ls-hero-slider .carousel-item { height: 73svh !important; max-height: 650px !important; }
+  .ls-hero-slider .ls-hero-content { padding-left: 17px !important; padding-right: 17px !important; padding-bottom: 52px !important; }
+  .ls-navbar .container { min-height: 62px; }
+  .ls-navbar .navbar-brand img { height: 50px; }
+  .ls-hero-slider .ls-hero-content h1 { font-size: 2.18rem !important; width: 70% !important; }
+  .ls-hero-slider .ls-hero-content h1::after { font-size: .80rem !important; width: 78% !important; }
+  .ls-hero-slider .ls-hero-content .btn-ls-primary,
+  .ls-hero-slider .ls-hero-content .btn-ls-outline { font-size: .55rem !important; padding-left: .62rem !important; padding-right: .62rem !important; }
 }
 
-/* Final mobile lock: every carousel slide uses the exact same box, with no outer gap. */
+/* Final mobile lock: every slide shares one exact box, eliminating slide-to-slide gaps. */
 @media (max-width: 767.98px) {
   html, body { margin: 0 !important; padding: 0 !important; }
-  .ls-hero-slider-wrap { margin: 0 !important; padding: 0 !important; border: 0 !important; border-radius: 0 !important; }
+  .ls-hero-slider-wrap,
+  .ls-hero,
   .ls-hero-slider,
   .ls-hero-slider .carousel-inner,
   .ls-hero-slider .carousel-item,
   .ls-hero-slider .carousel-item.active,
   .ls-hero-slider .carousel-item-next,
-  .ls-hero-slider .carousel-item-prev { margin: 0 !important; padding: 0 !important; }
+  .ls-hero-slider .carousel-item-prev {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
 }
