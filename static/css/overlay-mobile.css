@@ -1,0 +1,6 @@
+/* Mobile sizing for overlay image cards */
+@media (max-width: 768px) {
+  .ls-overlay-image-card {
+    min-height: 300px;
+  }
+}
