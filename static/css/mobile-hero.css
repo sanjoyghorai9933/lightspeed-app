@@ -23,11 +23,12 @@
   .ls-hero-slider .ls-hero-content .btn-ls-primary { background:#d9ad32 !important; border:1px solid #d9ad32 !important; color:#071b14 !important; box-shadow:0 5px 18px rgba(0,0,0,.16) !important; }
   .ls-hero-slider .ls-hero-content .btn-ls-outline { background:rgba(3,18,13,.12) !important; border:1px solid rgba(250,246,238,.82) !important; color:#faf6ee !important; box-shadow:0 3px 15px rgba(0,0,0,.10) !important; }
   .ls-hero-slider .ls-hero-content .btn-ls-primary:hover,.ls-hero-slider .ls-hero-content .btn-ls-outline:hover { transform:translateY(-1px); }
-  .ls-navbar.fixed-top { position:absolute !important; top:0 !important; left:0 !important; right:0 !important; z-index:1100 !important; width:100% !important; margin:0 !important; background:linear-gradient(180deg,rgba(3,18,13,.46),rgba(3,18,13,.04)) !important; border:0 !important; box-shadow:none !important; backdrop-filter:none !important; -webkit-backdrop-filter:none !important; border-radius:0 !important; }
-  .ls-navbar.fixed-top.scrolled { position:fixed !important; top:0 !important; left:0 !important; right:0 !important; background:rgba(3,18,13,.90) !important; border-radius:0 !important; backdrop-filter:blur(12px); }
+  .ls-navbar.fixed-top { position:absolute !important; top:0 !important; left:0 !important; right:0 !important; z-index:1100 !important; width:100% !important; margin:0 !important; background:rgb(13 43 31 / 0%) !important; border:0 !important; box-shadow:none !important; backdrop-filter:none !important; -webkit-backdrop-filter:none !important; border-radius:0 !important; }
+  .ls-navbar.fixed-top.scrolled { position:fixed !important; top:0 !important; left:0 !important; right:0 !important; background:rgba(13,43,31,0.96) !important; border-radius:0 !important; backdrop-filter:blur(12px); }
   .ls-navbar .container { min-height:68px; padding-left:18px; padding-right:18px; }
-  .ls-navbar .navbar-brand img { height:72px; width:auto; max-width:185px; object-fit:contain; filter:drop-shadow(0 2px 8px rgba(0,0,0,.45)); transition:height .22s ease,max-width .22s ease; }
-  .ls-navbar.fixed-top.scrolled .navbar-brand img { height:46px; max-width:135px; }
+  /* Larger mobile logo at first look; it shrinks when the navbar is scrolled. */
+  .ls-navbar .navbar-brand img { height:84px; width:auto; max-width:205px; object-fit:contain; filter:drop-shadow(0 2px 8px rgba(0,0,0,.45)); transition:height .22s ease,max-width .22s ease; }
+  .ls-navbar.fixed-top.scrolled .navbar-brand img { height:44px; max-width:130px; }
   .ls-navbar .brand-text { display:none !important; }
   .ls-navbar .navbar-toggler { width:44px; height:44px; padding:8px; border-radius:12px; background:rgba(0,0,0,.08); box-shadow:none !important; }
   .ls-navbar .navbar-toggler:focus { box-shadow:none !important; }
@@ -45,8 +46,8 @@
   .ls-hero,.ls-hero-slider,.ls-hero-slider .carousel-inner,.ls-hero-slider .carousel-item { height:78svh !important; max-height:690px !important; }
   .ls-hero-slider .ls-hero-content { padding-left:18px !important; padding-right:18px !important; padding-bottom:52px !important; }
   .ls-navbar .container { min-height:70px; }
-  .ls-navbar .navbar-brand img { height:64px; max-width:170px; }
-  .ls-navbar.fixed-top.scrolled .navbar-brand img { height:42px; max-width:125px; }
+  .ls-navbar .navbar-brand img { height:74px; max-width:190px; }
+  .ls-navbar.fixed-top.scrolled .navbar-brand img { height:40px; max-width:120px; }
   .ls-hero-slider .ls-hero-content h1 { font-size:2.28rem !important; width:57% !important; }
   .ls-hero-slider .ls-hero-content h1::after { font-size:.82rem !important; width:96% !important; }
   .ls-hero-slider .ls-hero-content .d-flex { gap:.45rem !important; }
@@ -55,7 +56,4 @@
 @media (max-width:767.98px) {
   html,body { margin:0 !important; padding:0 !important; }
   .ls-hero-slider-wrap,.ls-hero,.ls-hero-slider,.ls-hero-slider .carousel-inner,.ls-hero-slider .carousel-item,.ls-hero-slider .carousel-item.active,.ls-hero-slider .carousel-item-next,.ls-hero-slider .carousel-item-prev { margin:0 !important; padding:0 !important; border:0 !important; border-radius:0 !important; box-shadow:none !important; }
-  /* Keep the original Lightseed navbar colours. Only the logo size changes on mobile. */
-  .ls-navbar.fixed-top { background:rgb(13 43 31 / 0%) !important; }
-  .ls-navbar.fixed-top.scrolled { background:rgba(13,43,31,0.96) !important; }
 }
