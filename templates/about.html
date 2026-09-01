@@ -2,6 +2,44 @@
 {% block title %}About Us{% endblock %}
 {% block content %}
 
+<style>
+/* Team cards: keep every decorative circle mathematically centered on the portrait. */
+.ls-team-section{padding:5rem 0;background:var(--ls-cream-dark)}
+.ls-team-intro{max-width:680px;color:var(--ls-text-muted);line-height:1.75;margin:.5rem 0 2.25rem}
+.ls-team-heading{display:flex;align-items:center;gap:1rem;margin:2rem 0 1.35rem;color:var(--ls-dark);font-size:.72rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase}
+.ls-team-heading::before,.ls-team-heading::after{content:"";height:1px;background:rgba(201,168,76,.65);flex:1}
+.ls-team-heading span{white-space:nowrap}
+.ls-team-heading-spaced{margin-top:3.25rem}
+.ls-team-card{height:100%;padding:1.5rem 1.2rem 1.35rem;text-align:center;background:rgba(250,246,238,.88);border:1px solid rgba(45,74,62,.10);border-radius:22px;box-shadow:0 12px 30px rgba(28,28,28,.06);transition:transform .25s ease,box-shadow .25s ease}
+.ls-team-card:hover{transform:translateY(-4px);box-shadow:0 18px 38px rgba(28,28,28,.10)}
+.ls-team-card-core{padding:1.75rem 1.35rem 1.5rem}
+.ls-team-photo-wrap{position:relative;width:150px;height:150px;margin:0 auto 1.25rem;display:grid;place-items:center;isolation:isolate}
+.ls-team-card:not(.ls-team-card-core) .ls-team-photo-wrap{width:126px;height:126px}
+.ls-team-photo{position:relative;z-index:2;width:126px;height:126px;border-radius:50%;display:block;object-fit:cover;object-position:center;border:3px solid var(--ls-gold);background:var(--ls-cream);box-shadow:0 4px 14px rgba(0,0,0,.10)}
+.ls-team-card:not(.ls-team-card-core) .ls-team-photo{width:108px;height:108px}
+.ls-team-orbit{position:absolute;inset:2px;border:2px solid var(--ls-gold);border-radius:50%;z-index:1;pointer-events:none}
+.ls-team-orbit::before{content:"";position:absolute;width:30px;height:30px;border:2px solid var(--ls-blue-deep);border-right-color:transparent;border-bottom-color:transparent;border-radius:50%;left:-4px;top:7px;transform:rotate(-28deg)}
+.ls-team-orbit::after{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:var(--ls-blue-deep);left:-6px;top:25px;box-shadow:0 0 0 3px var(--ls-cream-dark)}
+.ls-team-card h3{font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:600;margin:0 0 .28rem;color:var(--ls-dark)}
+.ls-team-role{font-size:.7rem;line-height:1.45;color:#a97912;letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin:0 auto .9rem;max-width:250px}
+.ls-team-bio{font-size:.78rem;line-height:1.65;color:var(--ls-text-muted);margin:0;text-align:left}
+.ls-team-photo-placeholder{display:grid;place-items:center;background:linear-gradient(135deg,var(--ls-green-deep),var(--ls-green-mid));color:var(--ls-cream);font-family:'Cormorant Garamond',serif;font-size:2.25rem;font-weight:500;border:3px solid var(--ls-gold)}
+@media (max-width:767.98px){
+  .ls-team-section{padding:3.5rem 0}
+  .ls-team-intro{font-size:.86rem;margin-bottom:1.5rem}
+  .ls-team-heading{margin:1.75rem 0 1rem;font-size:.62rem;letter-spacing:.22em}
+  .ls-team-card{border-radius:18px;padding:1.2rem .95rem 1.15rem}
+  .ls-team-card-core{padding:1.35rem 1rem 1.2rem}
+  .ls-team-photo-wrap{width:124px;height:124px;margin-bottom:1rem}
+  .ls-team-card:not(.ls-team-card-core) .ls-team-photo-wrap{width:112px;height:112px}
+  .ls-team-photo{width:104px;height:104px}
+  .ls-team-card:not(.ls-team-card-core) .ls-team-photo{width:96px;height:96px}
+  .ls-team-card h3{font-size:.95rem}
+  .ls-team-role{font-size:.62rem}
+  .ls-team-bio{font-size:.72rem;line-height:1.6}
+}
+</style>
+
 <div class="ls-page-hero" style="background:linear-gradient(135deg,#1A2E28,#2D4A3E);">
   <div class="container">
     <span class="section-eyebrow" style="color:var(--ls-gold);" data-anim="fade-down">Our Story</span>
@@ -52,7 +90,7 @@
   </div>
 </section>
 
-<section id="team" class="ls-team-section py-5 bg-ls-cream-dark">
+<section id="team" class="ls-team-section bg-ls-cream-dark">
   <div class="container">
     <span class="section-eyebrow" data-anim="fade-down">Our Team</span>
     <h2 class="mb-2" data-anim="blur-in" data-delay="120">The Lightseed Collective</h2>
