@@ -1,0 +1,74 @@
+/* Tablet navigation fix: keep the menu readable over the hero. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Give the tablet navbar a solid, slightly translucent background so page text
+     cannot show through the opened navigation. */
+  .ls-navbar.fixed-top {
+    background: rgba(7, 27, 21, 0.97) !important;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.18) !important;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+  }
+
+  /* Make the hamburger clearly visible against the dark header. */
+  .ls-navbar .navbar-toggler {
+    width: 48px;
+    height: 48px;
+    padding: 9px;
+    border: 1px solid rgba(250, 246, 238, 0.35) !important;
+    border-radius: 10px;
+    background: rgba(250, 246, 238, 0.08) !important;
+  }
+
+  .ls-navbar .navbar-toggler:focus {
+    box-shadow: none !important;
+  }
+
+  .ls-navbar .navbar-toggler-icon {
+    width: 27px;
+    height: 27px;
+    background-image: none !important;
+    position: relative;
+    display: block;
+    border-top: 3px solid #FAF6EE;
+    border-bottom: 3px solid #FAF6EE;
+  }
+
+  .ls-navbar .navbar-toggler-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10px;
+    border-top: 3px solid #FAF6EE;
+  }
+
+  /* The opened menu is an opaque panel instead of transparent over hero text. */
+  .ls-navbar .navbar-collapse {
+    margin-top: 10px;
+    padding: 12px 16px 16px;
+    border-radius: 14px;
+    background: rgba(7, 27, 21, 0.99) !important;
+    border: 1px solid rgba(250, 246, 238, 0.10);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.22);
+  }
+
+  .ls-navbar .nav-link {
+    color: #FAF6EE !important;
+  }
+
+  .ls-navbar .nav-link:hover,
+  .ls-navbar .nav-link:focus,
+  .ls-navbar .nav-link.active {
+    color: var(--ls-gold) !important;
+  }
+
+  .ls-navbar .dropdown-toggle::after {
+    border-top-color: var(--ls-gold) !important;
+  }
+
+  .ls-navbar .dropdown-menu {
+    background: #FAF6EE !important;
+    border: 1px solid rgba(201, 168, 76, 0.2);
+  }
+}
