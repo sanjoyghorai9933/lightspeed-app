@@ -1,0 +1,15 @@
+/* Mobile Google Play badge: centered near the bottom of the footer. */
+@media (max-width: 767.98px) {
+  .ls-footer .app-download-badge {
+    display: block !important;
+    width: fit-content !important;
+    margin: 1rem auto 0 !important;
+    text-align: center;
+  }
+
+  .ls-footer .app-download-badge img {
+    width: 200px !important;
+    height: auto !important;
+    max-width: 80vw !important;
+  }
+}
